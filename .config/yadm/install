@@ -1,13 +1,29 @@
 #!/bin/sh
 
-# must agree to Xcode license to install Homebrew
-sudo xcodebuild -license
+system_type=$(uname -s)
 
-# install Homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+if [ "$system_type" = "Darwin" ]; then
+  # must agree to Xcode license to install Homebrew
+  sudo xcodebuild -license
 
-# install YADM
-brew install yadm
+  # install homebrew if it's missing
+  if ! command -v brew >/dev/null 2>&1; then
+    echo "Installing homebrew"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+  fi
 
-# clone and bootstrap dotfiles
-yadm clone --bootstrap "git@github.com:chrislambe/dotfiles.git"
+
+  # if homebrew install succeeded, install YADM
+  if command -v brew >/dev/null 2>&1; then
+    # install YADM
+    brew install yadm
+  fi
+
+
+  # if yadm install succeeded, clone and bootsrap dotfiles
+  if command -v yadm >/dev/null 2>&1; then
+    # clone and bootstrap dotfiles
+    yadm clone --bootstrap "https://github.com/chrislambe/dotfiles.git"
+  fi
+
+fi
