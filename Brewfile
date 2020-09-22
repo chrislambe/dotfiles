@@ -21,8 +21,6 @@ cask 'iterm2'
 cask 'nordvpn'
 cask 'slack'
 cask 'telegram'
-cask 'transmission-remote-gui'
 cask 'viscosity'
 cask 'visual-studio-code'
 cask 'whatsapp'
-

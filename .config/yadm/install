@@ -23,7 +23,7 @@ if [ "$system_type" = "Darwin" ]; then
   # if yadm install succeeded, clone and bootsrap dotfiles
   if command -v yadm >/dev/null 2>&1; then
     # clone and bootstrap dotfiles
-    yadm clone --bootstrap "https://github.com/chrislambe/dotfiles.git"
+    yadm clone -f --bootstrap "https://github.com/chrislambe/dotfiles.git"
   fi
 
 fi
