@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# must agree to Xcode license to install Homebrew
+sudo xcodebuild -license
+
 # install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
