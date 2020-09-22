@@ -4,7 +4,7 @@ system_type=$(uname -s)
 
 if [ "$system_type" = "Darwin" ]; then
   # must agree to Xcode license to install Homebrew
-  sudo xcodebuild -license
+  sudo xcodebuild -license accept
 
   # install homebrew if it's missing
   if ! command -v brew >/dev/null 2>&1; then
