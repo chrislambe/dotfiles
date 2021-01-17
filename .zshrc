@@ -10,8 +10,8 @@ export PATH=$HOME/Library/flutter/bin:$PATH
 # Android developer tools
 export PATH=$ANDROID_SDK_ROOT/platform-tools:$PATH
 
-# node@12
-export PATH=/usr/local/opt/node@12/bin:$PATH
+# node@14
+export PATH=/usr/local/opt/node@14/bin:$PATH
 
 # gnutils
 # export PATH=/usr/local/opt/grep/libexec/gnubin:$PATH
