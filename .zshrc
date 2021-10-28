@@ -4,14 +4,17 @@ export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# Homebrew
+export PATH=/usr/local/sbin:$PATH
+
 # Flutter
 export PATH=$HOME/Library/flutter/bin:$PATH
 
 # Android developer tools
 export PATH=$ANDROID_SDK_ROOT/platform-tools:$PATH
 
-# node@14
-export PATH=/usr/local/opt/node@14/bin:$PATH
+# node
+export PATH=/usr/local/opt/node@16/bin:$PATH
 
 # gnutils
 # export PATH=/usr/local/opt/grep/libexec/gnubin:$PATH
@@ -118,6 +121,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias ls="lsd"
 
 if type "thefuck" > /dev/null; then
     # Enable fuck command
