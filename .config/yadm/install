@@ -12,6 +12,12 @@ if [ "$system_type" = "Darwin" ]; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
   fi
 
+  if ! command -v brew >/dev/null 2>&1; then
+    echo "Still can't find brew on path, attempting to fix"
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zshrc
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+  fi
+
 
   # if homebrew install succeeded, install YADM
   if command -v brew >/dev/null 2>&1; then
